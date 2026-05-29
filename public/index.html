@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigade Belvedere - Luxury Living at Budigere Cross</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>BRIGADE BELVEDERE</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#amenities" class="nav-link">Amenities</a></li>
+                <li><a href="#floor-plans" class="nav-link">Floor Plans</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#location" class="nav-link">Location</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Luxury Living at Brigade Belvedere</h1>
+            <p class="hero-subtitle fade-in">Experience Italian-inspired elegance in the heart of Budigere Cross, Bengaluru</p>
+            <p class="hero-description fade-in">G+43 storey residential towers on 10.75 acres with world-class amenities</p>
+            <div class="hero-buttons fade-in">
+                <button class="btn btn-primary" onclick="downloadBrochure()">Download Brochure</button>
+                <button class="btn btn-secondary" onclick="scrollToContact()">Schedule Visit</button>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Brigade Belvedere</h2>
+                <p class="section-subtitle">In Love with Bella Vistas</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Brigade Belvedere brings Italian-inspired luxury to Bengaluru's thriving Budigere Cross. 
+                        Spread across 10.75 acres, this prestigious development features G+43 storey residential towers 
+                        designed for those who appreciate the finer things in life.
+                    </p>
+                    <p class="about-description">
+                        With a commitment to sustainability and a vision of Net Zero Emission by 2045, Brigade Belvedere 
+                        combines luxury with environmental responsibility. The project includes a sprawling 25,000 sq. ft. 
+                        clubhouse and over 40 world-class amenities.
+                    </p>
+                    <div class="about-rera">
+                        <strong>RERA Reg. No:</strong> PRM/KA/RERA/1251/446/PR/240326/008549
+                    </div>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏢</div>
+                        <h3>Spacious Apartments</h3>
+                        <p>1, 2 & 3 BHK premium apartments ranging from 715 to 2013 sq.ft</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🌟</div>
+                        <h3>Premium Amenities</h3>
+                        <p>25,000 sq.ft clubhouse with 40+ world-class amenities</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">📍</div>
+                        <h3>Prime Location</h3>
+                        <p>Strategic location near airport, IT hubs, and metro stations</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏆</div>
+                        <h3>Trusted Developer</h3>
+                        <p>By Brigade Group - Believe in Better since 1986</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">World-Class Amenities</h2>
+                <p class="section-subtitle">Over 40 premium amenities designed for your lifestyle</p>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏊</div>
+                    <h3>Swimming Pool</h3>
+                    <p>Olympic-sized pool with leisure area</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏋️</div>
+                    <h3>Fitness Center</h3>
+                    <p>State-of-the-art gym and outdoor fitness area</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎾</div>
+                    <h3>Sports Courts</h3>
+                    <p>Tennis, Pickleball & Multipurpose courts</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏛️</div>
+                    <h3>Clubhouse</h3>
+                    <p>25,000 sq.ft premium clubhouse</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🌳</div>
+                    <h3>Landscaped Gardens</h3>
+                    <p>Floral garden, butterfly garden & tree court</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">👶</div>
+                    <h3>Children's Play Area</h3>
+                    <p>Multiple play zones including nature play</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🧘</div>
+                    <h3>Yoga & Meditation</h3>
+                    <p>Dedicated yoga lawn and meditation deck</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🛹</div>
+                    <h3>Skating Rink</h3>
+                    <p>Professional skating area for all ages</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🐕</div>
+                    <h3>Pet Park</h3>
+                    <p>Dedicated space for your furry friends</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎭</div>
+                    <h3>Event Plaza</h3>
+                    <p>Stepped arena and celebration lawn</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">📚</div>
+                    <h3>Reading Areas</h3>
+                    <p>Outdoor reading and workstation zones</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🔒</div>
+                    <h3>24/7 Security</h3>
+                    <p>Advanced security systems with CCTV</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plans Section -->
+    <section id="floor-plans" class="floor-plans-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Floor Plans</h2>
+                <p class="section-subtitle">Choose from our thoughtfully designed homes</p>
+            </div>
+            <div class="floor-plans-tabs">
+                <button class="tab-btn active" onclick="showFloorPlan('1bhk')">1 BHK</button>
+                <button class="tab-btn" onclick="showFloorPlan('2bhk')">2 BHK</button>
+                <button class="tab-btn" onclick="showFloorPlan('3bhk')">3 BHK</button>
+                <button class="tab-btn" onclick="showFloorPlan('3bhk-study')">3 BHK + Study</button>
+            </div>
+            <div class="floor-plans-content">
+                <div id="1bhk" class="floor-plan-item active">
+                    <div class="floor-plan-details">
+                        <h3>1 BHK + 1T - TYPE 1 C</h3>
+                        <div class="plan-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Super Built-up Area:</span>
+                                <span class="spec-value">715 Sq.ft (66.40 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Carpet Area:</span>
+                                <span class="spec-value">427 Sq.ft (39.63 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Balcony Area:</span>
+                                <span class="spec-value">37 Sq.ft (3.40 Sq.m)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-plan-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="1 BHK Floor Plan">
+                    </div>
+                </div>
+                <div id="2bhk" class="floor-plan-item">
+                    <div class="floor-plan-details">
+                        <h3>2 BHK + 2T - TYPE 2 L</h3>
+                        <div class="plan-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Super Built-up Area:</span>
+                                <span class="spec-value">1149 Sq.ft (106.78 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Carpet Area:</span>
+                                <span class="spec-value">709 Sq.ft (65.84 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Balcony Area:</span>
+                                <span class="spec-value">33 Sq.ft (3.09 Sq.m)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-plan-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="2 BHK Floor Plan">
+                    </div>
+                </div>
+                <div id="3bhk" class="floor-plan-item">
+                    <div class="floor-plan-details">
+                        <h3>3 BHK + 2T - TYPE 3 G</h3>
+                        <div class="plan-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Super Built-up Area:</span>
+                                <span class="spec-value">1443 Sq.ft (134.01 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Carpet Area:</span>
+                                <span class="spec-value">909 Sq.ft (84.42 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Balcony Area:</span>
+                                <span class="spec-value">32 Sq.ft (3.01 Sq.m)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-plan-image">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="3 BHK Floor Plan">
+                    </div>
+                </div>
+                <div id="3bhk-study" class="floor-plan-item">
+                    <div class="floor-plan-details">
+                        <h3>3 BHK + 3T + Study + Powder - TYPE 3 S</h3>
+                        <div class="plan-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Super Built-up Area:</span>
+                                <span class="spec-value">2013 Sq.ft (186.97 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Carpet Area:</span>
+                                <span class="spec-value">1205 Sq.ft (111.97 Sq.m)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Balcony Area:</span>
+                                <span class="spec-value">108 Sq.ft (10.00 Sq.m)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floor-plan-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="3 BHK with Study Floor Plan">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">Visualize your dream home</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Luxury Exterior">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Modern Interior">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="Elegant Living Room">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80" alt="Spacious Bedroom">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80" alt="Modern Kitchen">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Luxurious Bathroom">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Beautiful Balcony View">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Premium Amenities">
+                    <div class="gallery-overlay">
+                        <span>View Image</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="lightbox-next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Prime Location</h2>
+                <p class="section-subtitle">Strategically located at Budigere Cross, Bengaluru</p>
+            </div>
+            <div class="location-content">
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5234!2d77.7789!3d13.0465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzQ3LjQiTiA3N8KwNDYnNDQuMCJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="location-landmarks">
+                    <h3>Nearby Landmarks</h3>
+                    <div class="landmarks-grid">
+                        <div class="landmark-item">
+                            <span class="landmark-icon">✈️</span>
+                            <div>
+                                <strong>Kempegowda International Airport</strong>
+                                <p>Easy access to T2 entrance</p>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <span class="landmark-icon">🏢</span>
+                            <div>
+                                <strong>IT Hubs</strong>
+                                <p>SAP Labs, Boeing, Wipro Aerospace SEZ</p>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <span class="landmark-icon">🚇</span>
+                            <div>
+                                <strong>Metro Connectivity</strong>
+                                <p>Whitefield, Channasandra, Garudacharpalya</p>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <span class="landmark-icon">🏫</span>
+                            <div>
+                                <strong>Schools & Colleges</strong>
+                                <p>Baldwin, Silver Oaks, Brigade School</p>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <span class="landmark-icon">🏥</span>
+                            <div>
+                                <strong>Healthcare</strong>
+                                <p>MVJ Medical College, Manipal Hospital</p>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <span class="landmark-icon">🛍️</span>
+                            <div>
+                                <strong>Shopping & Entertainment</strong>
+                                <p>Phoenix Market City, Forum Value Mall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Schedule a site visit or request more information</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Budigere Cross, Bengaluru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>+91 80 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>belvedere@brigadegroup.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📘</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">🐦</a>
+                            <a href="#" class="social-icon">💼</a>
+                        </div>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <span class="form-error" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Send Inquiry</button>
+                    <div id="form-success" class="form-success"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918012345678" class="whatsapp-float" target="_blank">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BRIGADE BELVEDERE</h3>
+                    <p>Believe in Better</p>
+                </div>
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> This website is for informational purposes only. All images and illustrations are artist's impressions and subject to change. Please refer to the official documentation for accurate details. RERA Registration No: PRM/KA/RERA/1251/446/PR/240326/008549</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Brigade Group. All rights reserved. | Commitment to Net Zero Emission by 2045</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
