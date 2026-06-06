@@ -35,6 +35,27 @@ function scrollToContact() {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
+// Lead form and EOI Pop-up
+let popupTriggered = false;
+
+window.addEventListener('scroll', () => {
+  // Calculate how far down the user has scrolled
+  const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (window.scrollY / scrollTotal) * 100;
+
+  // Trigger if scrolled past 10% and hasn't opened yet
+  if (scrollPercent > 10 && !popupTriggered ) {
+    document.getElementById('scrollPopup').style.display = 'flex';
+    popupTriggered = true;
+}
+});
+
+// Function to close the popup
+function closePopup() {
+  document.getElementById('scrollPopup').style.display = 'none';
+}
+
+
 // Floor Plans Tabs
 function showFloorPlan(planId) {
     // Remove active class from all tabs and plans
@@ -52,14 +73,12 @@ function showFloorPlan(planId) {
 
 // Gallery Lightbox
 const galleryImages = [
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80',
-    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80'
+    '/gallery/glr1.jpg',
+    '/gallery/glr2.jpg',
+    '/gallery/glr3.jpg',
+    '/gallery/glr4.jpg',
+    '/gallery/glr5.jpg',
+    '/gallery/Living_area.jpg'
 ];
 
 let currentImageIndex = 0;
@@ -110,78 +129,83 @@ contactForm.addEventListener('submit', async (e) => {
     document.querySelectorAll('.form-error').forEach(error => {
         error.textContent = '';
     });
+});
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyF69VQ1WzwbE7M0kHv3-NsT960P4KepD7WuUNgU23Kt0phGG0ExCX6_Ja7aqd7x0lz/exec';
+
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const isValid = validateForm();
+            if (!isValid) {
+                return; // Stop submission if fields are invalid
+            }
+            
+            // Convert form elements to URL query parameters for safer processing
+            var formData = new URLSearchParams(new FormData(form));
+
+            // adding checkbox check (optional)
+            var authorize = document.getElementById("authorize").checked;
+
+            if(authorize) {
+                formData.set("authorize", "Yes");
+            } else {
+                formData.set("authorize", "No");
+            }
+
+            fetch(scriptURL, {
+                method: "POST", 
+                body: formData,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+            .then((response) => {
+                swal("Done", "Submitted Successfully.", "success");
+                form.reset();
+            })
+            .catch((error) => {
+                swal("Error", "Something went wrong. please try again!", "error");
+            });
+    });
+
+     // Validate Form data
+    function validateForm() {
 
     // Get form values
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-    let isValid = true;
-
-    // Validate name
+        // Validate name
     if (name.length < 2) {
         document.getElementById('name-error').textContent = 'Please enter a valid name';
-        isValid = false;
+        return false;
+    } else {
+        return true;
     }
-
+    
     // Validate phone
     const phoneRegex = /^[0-9]{10}$/;
     if (!phoneRegex.test(phone)) {
         document.getElementById('phone-error').textContent = 'Please enter a valid 10-digit phone number';
-        isValid = false;
+        return false;
+    } else {
+        return true;
     }
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         document.getElementById('email-error').textContent = 'Please enter a valid email address';
-        isValid = false;
+        return false;
+    } else {
+        return true;
     }
-
-    // Validate message
-    if (message.length < 10) {
-        document.getElementById('message-error').textContent = 'Message must be at least 10 characters';
-        isValid = false;
-    }
-
-    if (isValid) {
-        // Use the deployed backend URL
-        const backendUrl = 'https://belvedere-luxury.preview.emergentagent.com';
-        
-        try {
-            const response = await fetch(`${backendUrl}/api/contact`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                })
-            });
-
-            if (response.ok) {
-                const successMsg = document.getElementById('form-success');
-                successMsg.textContent = 'Thank you! Your inquiry has been submitted successfully. Our team will contact you soon.';
-                successMsg.classList.add('active');
-                contactForm.reset();
-
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMsg.classList.remove('active');
-                }, 5000);
-            } else {
-                alert('There was an error submitting your inquiry. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            alert('There was an error submitting your inquiry. Please try again.');
-        }
-    }
-});
+};
 
 // Scroll reveal animations
 const observerOptions = {
